@@ -1,0 +1,231 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.chat-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    padding: 15px;
+    margin: 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.5em;
+}
+
+.chat-box {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #e9eef2;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    max-width: 75%;
+    word-wrap: break-word;
+    font-size: 0.95em;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: white;
+    border-bottom-right-radius: 5px; /* Tweak for better look */
+}
+
+.bot-message {
+    align-self: flex-start;
+    background-color: #e0e0e0;
+    color: #333;
+    border-bottom-left-radius: 5px; /* Tweak for better look */
+}
+
+.chat-input {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #eee;
+    background-color: #fff;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 1em;
+    margin-right: 10px;
+}
+
+#user-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+#send-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#send-button:hover {
+    background-color: #0056b3;
+}
+
+#send-button:active {
+    background-color: #004085;
+}
+
+/* --- General Message Content Styling --- */
+.message p {
+    margin: 5px 0;
+}
+.message strong {
+    font-weight: bold;
+}
+.message ul {
+    margin: 5px 0 5px 20px;
+    padding: 0;
+    list-style-type: disc;
+}
+.message li {
+    margin-bottom: 3px;
+}
+.message a {
+    color: #007bff;
+    text-decoration: none;
+}
+.message a:hover {
+    text-decoration: underline;
+}
+
+/* --- Action Buttons --- */
+.actions {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Space between buttons */
+}
+
+.action-button {
+    background-color: #28a745; /* Green for actions */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background-color 0.2s ease;
+}
+
+.action-button:hover {
+    background-color: #218838;
+}
+
+/* --- Status Badges --- */
+.status-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+}
+
+.status-badge.status-processing {
+    background-color: #ffc107; /* Yellow */
+    color: #333;
+}
+
+.status-badge.status-shipped {
+    background-color: #17a2b8; /* Cyan */
+}
+
+.status-badge.status-delivered {
+    background-color: #28a745; /* Green */
+}
+.status-badge.status-unknown {
+    background-color: #6c757d; /* Gray */
+}
+
+/* --- New specific styles for new types --- */
+.message .note {
+    font-style: italic;
+    font-size: 0.8em;
+    color: #555;
+    margin-top: 8px;
+}
+
+.message .suggestions {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.message .suggestions span {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 5px;
+    display: inline-block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+/* ... (Keep all existing CSS) ... */
+
+/* --- NEW: Human Handoff Message Style --- */
+.handoff-message {
+    background-color: #f8d7da; /* Light red/pink background */
+    border: 1px solid #dc3545; /* Red border */
+    color: #721c24; /* Dark red text */
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px auto; /* Center it */
+    max-width: 90%;
+    font-size: 0.95em;
+    font-weight: bold;
+}
+
+.handoff-message .handoff-link {
+    color: #007bff; /* Keep link color consistent or make it stand out */
+    text-decoration: underline;
+    margin-top: 10px;
+    display: inline-block; /* Make it a block element if you want it on its own line */
+}
+
+.handoff-message .small-text {
+    font-size: 0.75em;
+    color: #666;
+    margin-top: 10px;
+    font-weight: normal;
+    font-style: italic;
+}
